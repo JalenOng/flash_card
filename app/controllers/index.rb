@@ -48,7 +48,7 @@ else
 end
 
 guess = Guess.create(card_id: @card.id, round_id: params[:round_id], status: status)
-byebug
+
 round = Round.find(params[:round_id])
 
 
