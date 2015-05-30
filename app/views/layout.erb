@@ -19,7 +19,14 @@
 </head>
 <body>
   <div class="container">
-   <a href="/">Home!</a>
+   <a href="/">Home</a>
+   <% if logged_in? %>
+   Welcome <%= username %>
+  <form action="/logout" method="POST">
+  <input type="submit" value="Get me outta here">
+  </form>
+  <% end %>
+   
   <%= yield %>
 </div>
 </body>

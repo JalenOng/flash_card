@@ -1,9 +1,47 @@
+enable :session
+
+def logged_in?
+  if session[:user_id] == nil
+    false
+  else
+    true
+  end
+end
+
+def username
+  @user = User.find(session[:user_id])
+  @user.username
+end
 #ok
 get '/' do
   # Look in app/views/index.erb
 
-
   erb :index
+end
+
+post '/logout' do
+
+session.clear
+redirect to '/'
+end
+
+get '/user/sign_up' do
+
+erb :"/user/sign_up"
+end
+
+post '/user/sign_up' do
+
+@user = User.new(params[:user])
+
+if @user.save
+  session[:user_id] = @user_id
+  redirect to "/user/#{@user.id}"
+
+else
+  redirect to "/user/sign_up"
+end
+
 end
 
 #ok
@@ -72,7 +110,7 @@ end
 
 get '/:user_id/stats' do
   @rounds = Round.all
-  byebug
+
 
 erb :'user/stat'
 end

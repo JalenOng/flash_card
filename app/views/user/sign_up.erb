@@ -1,5 +1,5 @@
 
-  <h1>Welcome Young Padawan!</h1>
+  <h1>Sell your soul</h1>
 
 
   <% if @user %>
@@ -8,7 +8,7 @@
   <% end %>
   <% end %>
 
-  <form action="/login" method="POST">
+  <form action="/user/sign_up" method="POST">
 
   <label>Username:</label>
   <input type="text" name="user[username]">
@@ -18,8 +18,7 @@
   <input type="text" name="user[password]">
   <br />
   <br />
-  <input type="submit" value="Let the games begin!">
+  <input type="submit" value="Bring me in!">
   </form>
-  <br />
-  <br />
-  <a href="/user/sign_up">Sign Up</a>
+
+ 

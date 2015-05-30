@@ -19,6 +19,13 @@ page.each do |row|
   Card.create(deck_id: deck.id, question: line[0], answer: line[1])
 end
 
+deck = Deck.create(name: "Eng-Filipino")
+
+page = File.open('db/eng_fili')
+page.each do |row|
+  line = row.split(" ")
+  Card.create(deck_id: deck.id, question: line[0], answer: line[1])
+end
 
 
 
