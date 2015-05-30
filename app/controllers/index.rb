@@ -53,18 +53,18 @@ round = Round.find(params[:round_id])
 
 
 if round.guesses.count < 5
-redirect to "/#{params[:deck_id]}/#{round.id}/#{guess.id}"
+redirect to "/#{params[:deck_id]}/#{round.id}/#{guess.id}/#{params[:card_id]}"
 else
 redirect to "/#{session[:user_id]}/stats"
 end
 
 end
 
-get '/:deck_id/:round_id/:guess_id' do
+get '/:deck_id/:round_id/:guess_id/:card_id' do
   @deck = Deck.find(params[:deck_id])
   @round = Round.find(params[:round_id])
   @guess = Guess.find(params[:guess_id])
-  @prev_card = @guess.card
+  @prev_card = Card.find(params[:card_id])
   @card = Card.sample_card
 
 erb :'/deck/show2'

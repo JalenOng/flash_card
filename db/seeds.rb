@@ -11,7 +11,7 @@ a = 1
   a += 1
 end
 
-deck = Deck.create(name: "eng-malay")
+deck = Deck.create(name: "Eng-Malay")
 
 page = File.open('db/english_mal.txt')
 page.each do |row|
