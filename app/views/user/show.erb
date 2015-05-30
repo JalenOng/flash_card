@@ -1,0 +1,9 @@
+<h1>Choose your poison</h1>
+
+ Decks:
+
+<% @deck.each do |d| %>
+  <a href="/deck/<%= d.id %>">
+    <p><%= d.name %></p>
+  </a>
+<% end %>

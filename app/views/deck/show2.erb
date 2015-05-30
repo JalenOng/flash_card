@@ -1,0 +1,18 @@
+<h1><%= @deck.name %></h1>
+
+Answer is: <%= @guess.status %>
+<br />
+<br />
+
+<p>Correct answer is: <%= @prev_card.answer %><p>
+<br />
+<br />
+
+Question:
+<%= @card.first.question %>
+
+<form action="/<%= @deck.id %>/<%= @round.id %>/<%=@card.first.id%>" method="POST">
+<label>Answer:</label>
+<input type="text" name="answer">
+<input type="submit" value="Submit">
+</form>

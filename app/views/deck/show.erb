@@ -1,0 +1,11 @@
+<h1><%= @deck.name %></h1>
+
+Question:
+
+<%= @card.first.question %>
+
+<form action="/<%= @deck.id %>/<%= @round.id %>/<%=@card.first.id%>" method="POST">
+<label>Answer:</label>
+<input type="text" name="answer">
+<input type="submit" value="Submit">
+</form>

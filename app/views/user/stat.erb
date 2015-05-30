@@ -1,0 +1,16 @@
+<h1>Your Stats, Padawan</h1>
+
+
+
+Rounds:
+
+<% @rounds.each do |r| %>
+
+
+<p><%= r.id%>. Deck: <%= r.deck.name %>,
+Total guesses: <%= r.guesses.count %>,
+Correct: <%= Guess.where(round_id: r.id, status: true).count%>,
+Incorrect: <%= Guess.where(round_id: r.id, status: false).count%>
+</p>
+
+<% end %>
