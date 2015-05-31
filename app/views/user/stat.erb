@@ -10,7 +10,8 @@ Rounds:
 <p><%= r.id%>. Deck: <%= r.deck.name %>,
 Total guesses: <%= r.guesses.count %>,
 Correct: <%= Guess.where(round_id: r.id, status: "correct").count%>,
-Incorrect: <%= Guess.where(round_id: r.id, status: "wrong").count%>
+Incorrect: <%= Guess.where(round_id: r.id, status: "wrong").count%>,
+Completed at: <%= r.updated_at %>
 </p>
 
 <% end %>

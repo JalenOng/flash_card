@@ -109,7 +109,12 @@ erb :'/deck/show2'
 end
 
 get '/:user_id/stats' do
-  @rounds = Round.all
+  @rounds = Round.order(id: :desc)  
+
+  byebug
+  
+ 
+  
 
 
 erb :'user/stat'
