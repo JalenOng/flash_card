@@ -110,12 +110,7 @@ end
 
 get '/:user_id/stats' do
   @rounds = Round.order(id: :desc)  
-
-  byebug
   
  
-  
-
-
 erb :'user/stat'
 end
